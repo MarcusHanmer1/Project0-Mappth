@@ -8,10 +8,10 @@
 ## 1. The Problem
 
 **Pain point**  
-Students who need help with GCSE maths (or any topic for that matter) may find it hard to get help, since it is difficult for the school itself to always deliver every need for the student, and outside of school the child is either left alone to teach themselves, or they get a personal tutor. The paint point with this is that the tutor will cost upwards of £30/hr if not more, and this is alot of money over time. Furthermore, each session is only on average an hour long, and is only on a particular time of day that is schedualed. There are many issues with this, and the idea for Mappth was to have a tutor in your pocket all of the time which is ready to teach anything, anytime for as long as you want, at an even more affordable rate than a real tutor.
+Students who need help with GCSE maths may find it hard to get help, since it is difficult for the school itself to always deliver every need for the student, and outside of school the child is either left alone to teach themselves, or they get a personal tutor. The paint point with this is that the tutor will cost upwards of £30/hr if not more, and this is alot of money over time. Furthermore, each session is only on average an hour long, and is only on a particular time of day that is schedualed. There are many issues with this, and the idea for Mappth is to have a tutor in your pocket all of the time which is ready to teach anything, anytime for as long as you want, at an even more affordable rate than a real tutor.
 
 **Why use AI?**  
-The need for AI here was is very justified since it is more of an addition to the app than the main focus. The app holds content made by a real human tutor, along with questions for each topic, and the AI is there to add an adaptive agent to the app for students to ask questions if they need it. Along with this, the agent can (and is refined to) create many exam style and past paper type questions for the student to practice on request, which is heavily useful since exam style questions are very important for revision, and apps can not use real exam questions, so the next best thing is to make your own, which tuned LLM's are very good at.
+The need for AI here is justified since it is a key addition to the app. The app holds content made by a real human tutor, along with questions for each topic, and the AI is there to add an adaptive agent to the app for students to ask questions if they need it. Along with this, the agent can create many exam style and past paper type questions for the student to practice on request. We engineer the LLM to be adapted for this agentic role.
 
 ## 2. The UX
 
@@ -25,23 +25,37 @@ When the prompt is sent to the agent, it processes the prompt while first reciev
 The agent outputs a typical AI chatbot response of the generated questions and or theory for the student to read and then use or respond to. The agent remembers the conversation and can indeed provide answers to previous questions.
 
 **User Stories**  
-User story 1 - I want to revise for my maths exam but I don't know where to go. Mappth is the perfect place for this since there is a complete revision process within the app, ranging from revising specific topics for the exam to practicing actual exam questions and how to go about doing past papers correctly, along with how to do each question correctly.
+User story 1 - As a GCSE student, I want to ask the agent specific questions about a topic I am revising, so that I can get immediate clarification without waiting for a teacher.
 
-User story 2 - I need help with my maths since I'm struggling to understand topics and I can ask the teacher since they're busy. Mappth is the perfect place for this help since the app is available whenever the user needs, and the AI helper Richard can take any question you have on the material, and can indeed teach you as if you were being taught by the teacher.
+User story 2 - As a GCSE student, I want to request "exam-style" questions on a specific topic (e.g., Pythagoras), so that I can practice applying theory to the specific format of my exam board.
 
-User story 3 - I've answered some past paper questions but I don't know if I've got the question right or not. Mappth is perfect for this once again since if you don't understand the markscheme then you can use the AI helper Richard to do the question for you, and also mark you answer to see if it is correct and follows the markscheme.
+User story 3 - As a GCSE student, I want to have the AI explain why a specific mark scheme answer is correct, so that I can understand where I lost marks in past papers.
+
+User story 4 - As a GCSE student, I want to receive a step-by-step breakdown of a solution, so that I can learn the methodology, not just the final answer.
 
 ## 3. Possible Issues
 
-- Slow response loading time
-- Hallucination
-- Uncertainty in the answer
-- Questions outside the particular spec
+### Hallucinations
 
-**Fixes**  
-The slow response loading time can be fixed in other generations of the app, but the solution given here is by adding a loading icon that the user will see when a message is sent and is there until the AI helper responds.
+**Impact:** High  
+1. Low temperature setting on LLM.
+2. System prompt instructions to admit ignorance rather than guess.
+3. Verify against connected knowledge base (RAG) where possible.
 
-Hallucinations and uncertainty are also an issue which could be helped more in other generations of the app, but here since we only had access to prompt engineering, we specify CLEARLY the content that the agent has access to, the few shot prompting shows how to response if the agent is uncertain and if the content is not within the particular spec. This will aid the model in determining when and when not to respond, and when it does respond to do so in a way which uses enough tokens and explanations for the user so that the output aligns with out goals.
+### Latency
+
+**Impact:** Medium  
+Implement streaming responses (token by token) and a visible loading state.
+
+### Prompt Injection
+
+**Impact:** Medium  
+Strict guardrails preventing the user from changing Richard's persona or discussing inappropriate topics.
+
+### Syllabus Drift
+
+**Impact:** Medium  
+System prompt must strictly limit scope to GCSE curriculum (WJEC, AQA, OCR, EDEXCEL).
 
 ## 4. System Prompt spec
 
@@ -53,28 +67,25 @@ As we see, there are constraints for the model such as not allowing it to talk o
 
 ## 5. Evaluation
 
-For the evaluation of the agent, we will use analytics to track the following:
-- How many users used the agent out of total app users
-- The time a user used the agent out of total app users time
-- The % of people who found the agent useful (with a random sample of users)
+**Feature success (The Agent)**  
+- Adoption rate: > 40% of daily active users engage with the agent.
+- Session depth: average conversation length > 5 turns.
+- Sentiment: > 75% positive feedback.
 
-For the overall product evaluation we will also use similar analytics:
-- The time a user used the app
-- The % of people who found the app useful (with a random sample of users)
-- The return rate of users to the app
-- The re-subscription rate of the users to the app
-
-(base numbers)
-Pass if:
-- At least 95% of users use the agent
-- At least 30% of users app time is spent with the agent
-- At least 75% of users found the agent useful
-- At least 20 minutes of app usage per session per user
-- At least 75% of users found the app useful
-- At least 75% of users return to use the app again
-- At least 50% of users re-subscribe
+**Product success (The App)**  
+- Retention: > 40% Day 30 retention.
+- Session length: average session > 15 minutes.
+- Conversion: > 15% free trail to paid conversion rate.
 
 ## 6. Scope
 
-For the current time, there is nothing out of scope. 
-(This can change given time in the process.)
+**In Scope:**  
+- Text based chat interface.
+- Exam question generation (Text).
+- Syllabus coverage: AQA, OCR, Edexcel, WJEC.
+
+**Out of Scope:**  
+- Image recognition.
+- Voice interaction mode.
+- A Level or other content.
+- Non maths subjects.
