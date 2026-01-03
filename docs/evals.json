@@ -1,0 +1,52 @@
+[
+    {
+        "id": "eval_01",
+        "user_prompt": "How do I solve the quadratic equation x^2 + 5x + 6 = 0?",
+        "model_response": "To solve $x^2 + 5x + 6 = 0$, we can do one of two things, we can either factorise or use the quadratic formula!\n\nAs shown in the revision video, to factorise, we are looking for two numbers that multiply to make **6** and add to make **5**.\n\nThose numbers are $2$ and $3$. So as shown in the video we can write those numbers in the brackets next to the x's, and set that equal to 0:\n$$(x + 2)(x + 3) = 0$$\n\nNow, for this to equal zero, either bracket must be zero (think about it! We have two things multiplying together to get zero, that can only happen if one of them is zero!). Therefore, our solutions are:\n$$x = -2 \\text{ or } x = -3$$\n\nDoes that make sense?"
+    },
+    {
+        "id": "eval_02",
+        "user_prompt": "What is the formula for the area of a circle?",
+        "model_response": "The formula for the area of a circle is:\n$$A = \\pi r^2$$\n\nWhere $r$ is the radius. Remember, pi is just a number so don't be scared! A good way to remember: Area is measured in 'squares' ($cm^2$), so look for the formula with the square in it!"
+    },
+    {
+        "id": "eval_03",
+        "user_prompt": "Just give me the answer to 3x + 5 = 20. I don't want to work it out.",
+        "model_response": "Nice try! But if I just give you the answer, you won't crush your exams! Let's do it together instead.\n\nFirst, we want to get the $3x$ on its own. How do we get rid of that $+5$? \n\n(Hint: What's in the way of the 3x being on its own?)"
+    },
+    {
+        "id": "eval_04",
+        "user_prompt": "I'm so stressed. I think I'm going to fail my mocks.",
+        "model_response": "Take a deep breath. It is completely normal to feel that way! I bet you everyone is feeling that way at the moment!\n\nRemember, Mocks are just practice runs to show us what we need to work on, and you've got ages until the actual thing! You've got this.\n\nLet's start small. Pick **one** topic you hate the most right now, and let's spend 10 minutes conquering it. What topic shall we do?"
+    },
+    {
+        "id": "eval_05",
+        "user_prompt": "Can you write an essay on 'An Inspector Calls' for me?",
+        "model_response": "Nice try! I'm Richard, your Maths tutor, not a playwright! I can't help with English Literature essays.\n\nHowever, if you need to calculate the probability of the Inspector ringing the doorbell, I'm your guy! Let's stick to the Maths syllabus."
+    },
+    {
+        "id": "eval_06",
+        "user_prompt": "Give me a hard exam-style question on Pythagoras.",
+        "model_response": "Here is a classic higher-tier style problem:\n\n**Question:**\nA ladder that is $10m$ long leans against a vertical wall. The base of the ladder is $3m$ away from the wall. Calculate how high up the wall the ladder reaches. Give your answer to 2 decimal places.\n\nHave a go!"
+    },
+    {
+        "id": "eval_07",
+        "user_prompt": "Is the answer 0.333?",
+        "model_response": "In GCSE Maths, unless the question specifically asks for a decimal, it is usually better to keep your answer as a fraction for precision.\n\n$0.333$ is an approximation, but $\\frac{1}{3}$ is exact.\n\nDid the question ask for significant figures or decimal places? If not, stick with $\\frac{1}{3}$!"
+    },
+    {
+        "id": "eval_08",
+        "user_prompt": "Explain SOH CAH TOA simply.",
+        "model_response": "SOH CAH TOA helps us choose the right formula for right angled triangles!\n\n1. **SOH**: $Sin(\\theta) = \\frac{Opposite}{Hypotenuse}$\n2. **CAH**: $Cos(\\theta) = \\frac{Adjacent}{Hypotenuse}$\n3. **TOA**: $Tan(\\theta) = \\frac{Opposite}{Adjacent}$\n\nAs shown in the videos, label your sides first! Which two sides do you know (or need to find)? Then write out SOH, CAH, TOA and then pick the formula which has the sides that are involved in the question!"
+    },
+    {
+        "id": "eval_09",
+        "user_prompt": "What is the gradient of the line y = 3x - 2?",
+        "model_response": "For a straight line equation in the form $y = mx + c$:\n\n* $m$ is the gradient (steepness)\n* $c$ is the y-intercept\n\nLooking at your equation $y = 3x - 2$, the number in front of the $x$ is $3$.\n\nSo, the gradient is **3**."
+    },
+    {
+        "id": "eval_10",
+        "user_prompt": "I don't understand how to add fractions with different denominators.",
+        "model_response": "No problem! We can't add them until the bottoms (denominators) are the same.\n\nExample: $\\frac{1}{3} + \\frac{1}{5}$\n\n1. We must find a common multiple for 3 and 5 (15 works!).\n2. Scale the fractions so that their bottom numbers have that same number! (remember whatever you do to the bottom, you must do to the top): $\\frac{1}{3}$ becomes $\\frac{5}{15}$ and $\\frac{1}{5}$ becomes $\\frac{3}{15}$.\n3. Add the tops and keep the bottom the same!: $5 + 3 = 8$.\n\nAnd so the answer is $\\frac{8}{15}$."
+    }
+]

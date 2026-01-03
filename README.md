@@ -19,6 +19,7 @@ Mappth is a Flutter based mobile app combining 100+ bespoke video tutorials, alo
 
 ## Documentation
 * [PRD](docs/PRD.md) - *Detailed feature specs and success metrics.*
+* [Evals](docs/evals.json) - *The Golden Dataset*
 * [Ethics](docs/Ethics.md) - *How I prevent Richard from hallucinating math answers.*
 
 ## Performance (Coming Soon)
