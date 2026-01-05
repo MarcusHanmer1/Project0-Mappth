@@ -27,7 +27,7 @@ Mitigation: Use low temperature (0.2), implement RAG, strictly prompt engineer n
 Description: Writing essays or doing homework without explanation.  
 Severity: High  
 Likelihood: Rare  
-Mitigation: Prompt engineer to specifically always provide detailed descriptions with a clear goal of actually teaching like a tutor.  
+Mitigation: Prompt engineer to specifically always provide detailed descriptions with a clear goal of actually teaching like a tutor, and specifically use the Socratic method.  
 
 **Risk: Tone policing:**   
 Description: The bot becoming aggressive or inappropriate.  
@@ -62,10 +62,13 @@ Mitigation: Choose a model which already has the mitigating behaviour built in.
 ## 5. Incidence Response
 
 **The flagging mechanism:** The flagging mechanism is to contact the team on the apps reviews and issues page.  
-**Review process:** Flagged messages are reviewed by the product team weekly.  
+
+**Review process:** App reviews and issues are reviewed by the product team weekly.  
+
 **The kill switch:** In the event of a critical safety failure (e.g., the bot starts swearing), we will review the issue and immediately review it, take down the issue for production, then evaluate and re-release after the fix.
 
 ## 6. Transparency and User Disclosure
 
 **Identity:** The product storeface clearly labels Richard as an 'AI Tutor' and not a real person.  
+
 **Limitations:** We explicitly inform users that Richard is just a messanger agent that can only interact via message.
